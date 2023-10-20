@@ -1,8 +1,19 @@
 import React from 'react';
 import { BtnDelete, InputTask, TextTask, WrapTask } from './Task.styled';
 // Імпортуємо генератор екшену
-import { deleteTask, toggleCompleted } from '../../redux/actions';
+import { deleteTask, toggleCompleted } from '../../redux/tasksSlice';
 import { useDispatch } from 'react-redux';
+
+// const getVisibleTasks = (tasks, statusFilter) => {
+//   switch (statusFilter) {
+//     case statusFilters.active:
+//       return tasks.filter(task => !task.completed);
+//     case statusFilters.completed:
+//       return tasks.filter(task => task.completed);
+//     default:
+//       return tasks;
+//   }
+// };
 
 export default function Task({ task }) {
   const dispatch = useDispatch();

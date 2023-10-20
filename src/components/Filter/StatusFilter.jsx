@@ -11,18 +11,22 @@ import {
 } from './StatusFilter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 // Імпортуємо об'єкт значень фільтра
-import { statusFilters } from '../../redux/constants';
 // Імпортуємо генератор екшену
-import { setStatusFilter } from '../../redux/actions';
+// import { setStatusFilter } from '../../redux/actions';
+import { getStatusFilter } from '../../redux/selectors';
+import { setStatusFilter } from '../../redux/filtersSlice';
+import { statusFilters } from '../../redux/constants';
 
 export default function StatusFilter() {
   // Отримуємо посилання на функцію відправки екшенів
   const dispatch = useDispatch();
+  const filter = useSelector(getStatusFilter);
+  const handleFilterChange = filter => dispatch(setStatusFilter(filter));
   // Отримуємо значення фільтра із стану Redux
-  const filter = useSelector(state => state.statusFilter);
+  // const filter = useSelector(state => state.statusFilter);
   // Викликаємо генератор екшену та передаємо значення фільтра
   // Відправляємо результат - екшен зміни фільтра
-  const handleFilterChange = filter => dispatch(setStatusFilter(filter));
+  // const handleFilterChange = filter => dispatch(setStatusFilter(filter));
   return (
     <div>
       <WrapFilter>

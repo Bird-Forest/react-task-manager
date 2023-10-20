@@ -7,10 +7,12 @@ import {
   WrapCounter,
 } from './TaskConter.styled';
 import { useSelector } from 'react-redux';
+import { getTasks } from 'redux/selectors';
 
 export const TaskCounter = () => {
+  const tasks = useSelector(getTasks);
   // Отримуємо масив завдань із стану Redux
-  const tasks = useSelector(state => state.tasks);
+  // const tasks = useSelector(state => state.tasks);
   // На базі стану Redux отримуємо похідні дані
   const count = tasks.reduce(
     (acc, task) => {

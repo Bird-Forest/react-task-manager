@@ -1,7 +1,7 @@
 import React from 'react';
 import { BtnForm, FormTask, InputForm, WrapForm } from './TaskForm.styled';
 // Імпортуємо генератор екшену
-import { addTask } from '../../redux/actions';
+import { addTask } from '../../redux/tasksSlice';
 import { useDispatch } from 'react-redux';
 
 export default function TaskForm() {
