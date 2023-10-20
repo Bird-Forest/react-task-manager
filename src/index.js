@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { store } from 'redux/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="task-manager">
+  <BrowserRouter basename="react-task-manager">
     <Provider store={store}>
       <App />
     </Provider>
