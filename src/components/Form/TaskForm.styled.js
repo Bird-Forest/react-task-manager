@@ -18,18 +18,3 @@ export const BtnForm = styled.button`
   width: 60px;
   height: 60px;
 `;
-
-// .form {
-//   display: flex;
-//   gap: 4px;
-// }
-
-// .field {
-//   flex-grow: 1;
-//   padding: 8px;
-//   font: inherit;
-// }
-
-// .field:focus {
-//   outline-color: #1976d2;
-// }

@@ -7,14 +7,14 @@ import { useDispatch } from 'react-redux';
 export default function TaskForm() {
   // Отримуємо посилання на функцію відправки екшенів
   const dispatch = useDispatch();
+
   const handleSubmit = event => {
     event.preventDefault();
-    const form = event.target;
     // Викликаємо генератор екшену та передаємо текст завдання для поля payload
     // Відправляємо результат – екшен створення завдання
-    dispatch(addTask(form.elements.text.value));
-
-    form.reset();
+    dispatch(addTask(event.target.elements.text.value));
+    console.log(event.target.elements.text.value);
+    event.target.reset();
   };
   return (
     <WrapForm>

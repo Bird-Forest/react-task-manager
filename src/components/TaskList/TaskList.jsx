@@ -1,35 +1,50 @@
-import Task from 'components/Task/Task';
 import React from 'react';
-import { WrapList } from './TaskList.styled';
-import { statusFilters } from '../../redux/constants';
-import { useSelector } from 'react-redux';
-
-const getVisibleTasks = (tasks, statusFilter) => {
-  switch (statusFilter) {
-    case statusFilters.active:
-      return tasks.filter(task => !task.completed);
-    case statusFilters.completed:
-      return tasks.filter(task => task.completed);
-    default:
-      return tasks;
-  }
-};
+import {
+  BtnDelete,
+  InputTask,
+  TextTask,
+  WrapList,
+  WrapTask,
+} from './TaskList.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
+import { deleteTask, toggleCompleted } from 'redux/tasksSlice';
 
 export default function TaskList() {
+  const dispatch = useDispatch();
   // Отримуємо масив завдань із стану Redux
-  const tasks = useSelector(state => state.tasks);
+  const tasks = useSelector(state => state.tasks.tasks);
+  console.log(tasks);
   // Отримуємо значення фільтра із стану Redux
-  const statusFilter = useSelector(state => state.filters.status);
+  const filter = useSelector(state => state.filters);
+  console.log(filter);
   // Обчислюємо масив завдань, які необхідно відображати в інтерфейсі
-  const visibleTasks = getVisibleTasks(tasks, statusFilter);
-
+  const showStatusTasks = (tasks, filter) => {
+    if (filter.statusFilters === 'active') {
+      return tasks.filter(task => !task.completed);
+    } else if (filter.statusFilters === 'ended') {
+      return tasks.filter(task => task.completed);
+    }
+    return tasks;
+  };
+  const changeTasks = showStatusTasks(tasks, filter);
+  const showArr = Array.isArray(tasks) && tasks.length;
   return (
     <WrapList>
-      {visibleTasks.map(task => (
-        // <ListItem key={task.id}>
-        <Task task={task} />
-        // </ListItem>
-      ))}
+      {showArr &&
+        changeTasks.map(({ id, text, completed }) => (
+          <WrapTask key={nanoid()} id={nanoid()}>
+            <InputTask
+              type="checkbox"
+              onChange={() => dispatch(toggleCompleted(id))}
+              checked={completed}
+            />
+            <TextTask>{text}</TextTask>
+            <BtnDelete onClick={() => dispatch(deleteTask(id))}>
+              Delete
+            </BtnDelete>
+          </WrapTask>
+        ))}
     </WrapList>
   );
 }
