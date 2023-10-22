@@ -1,5 +1,6 @@
 import React from 'react';
-import { BtnForm, FormTask, InputForm, WrapForm } from './TaskForm.styled';
+import { BsFillHandIndexThumbFill } from 'react-icons/bs';
+import { BtnForm, FormTask, InputForm } from './TaskForm.styled';
 // Імпортуємо генератор екшену
 import { addTask } from '../../redux/tasksSlice';
 import { useDispatch } from 'react-redux';
@@ -17,11 +18,11 @@ export default function TaskForm() {
     event.target.reset();
   };
   return (
-    <WrapForm>
-      <FormTask onSubmit={handleSubmit}>
-        <InputForm type="text" name="text" placeholder="Enter task text..." />
-        <BtnForm type="submit">Add task</BtnForm>
-      </FormTask>
-    </WrapForm>
+    <FormTask onSubmit={handleSubmit}>
+      <InputForm type="text" name="text" placeholder="Enter task text..." />
+      <BtnForm type="submit">
+        <BsFillHandIndexThumbFill className="icon-add" />
+      </BtnForm>
+    </FormTask>
   );
 }

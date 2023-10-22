@@ -10,6 +10,11 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 // Імпортуємо генератор екшену
 import { setStatusFilter } from '../../redux/filtersSlice';
+import {
+  BsEmojiWinkFill,
+  BsFillEmojiAngryFill,
+  BsFillEmojiSmileFill,
+} from 'react-icons/bs';
 
 export default function StatusFilter() {
   // Отримуємо посилання на функцію відправки екшенів
@@ -20,7 +25,7 @@ export default function StatusFilter() {
   // Викликаємо генератор екшену onClick та передаємо значення фільтра
 
   return (
-    <div>
+    <>
       <WrapFilter>
         <TitleFilter>Filter by status</TitleFilter>
         <WrapBtn>
@@ -28,22 +33,22 @@ export default function StatusFilter() {
             selected={filter.all}
             onClick={() => dispatch(setStatusFilter(filter.all))}
           >
-            All
+            <BsEmojiWinkFill className="icon-btn-all " />
           </BtnAll>
           <BtnActive
             selected={filter.active}
             onClick={() => dispatch(setStatusFilter(filter.active))}
           >
-            Active
+            <BsFillEmojiAngryFill className="icon-btn-active" />
           </BtnActive>
           <BtnCompleted
             selected={filter.ended}
             onClick={() => dispatch(setStatusFilter(filter.ended))}
           >
-            Ended
+            <BsFillEmojiSmileFill className="icon-btn-ended" />
           </BtnCompleted>
         </WrapBtn>
       </WrapFilter>
-    </div>
+    </>
   );
 }

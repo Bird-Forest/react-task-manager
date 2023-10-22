@@ -7,6 +7,7 @@ import {
   WrapCounter,
 } from './TaskConter.styled';
 import { useSelector } from 'react-redux';
+import { BsFillEmojiAngryFill, BsFillEmojiSmileFill } from 'react-icons/bs';
 
 export const TaskCounter = () => {
   // Отримуємо масив завдань із стану Redux
@@ -28,8 +29,12 @@ export const TaskCounter = () => {
     <WrapCounter>
       <TitleCounter>Tasks</TitleCounter>
       <Counter>
-        <Active>Active: {count.active}</Active>
-        <Completed>Completed: {count.completed}</Completed>
+        <Active>
+          <BsFillEmojiAngryFill className="icon-active" /> {count.active}
+        </Active>
+        <Completed>
+          <BsFillEmojiSmileFill className="icon-completed" /> {count.completed}
+        </Completed>
       </Counter>
     </WrapCounter>
   );

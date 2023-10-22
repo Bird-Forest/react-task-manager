@@ -1,7 +1,8 @@
 import React from 'react';
+
 import {
   BtnDelete,
-  InputTask,
+  Checkbox,
   TextTask,
   WrapList,
   WrapTask,
@@ -9,6 +10,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { deleteTask, toggleCompleted } from 'redux/tasksSlice';
+import { BsFillTrash3Fill } from 'react-icons/bs';
 
 export default function TaskList() {
   const dispatch = useDispatch();
@@ -34,14 +36,20 @@ export default function TaskList() {
       {showArr &&
         changeTasks.map(({ id, text, completed }) => (
           <WrapTask key={nanoid()} id={nanoid()}>
-            <InputTask
+            <Checkbox
               type="checkbox"
               onChange={() => dispatch(toggleCompleted(id))}
               checked={completed}
+              // id="checkbox"
+              // name="checkbox"
+              style={{
+                borderRadius: 4,
+                backgroundColor: 'gray',
+              }}
             />
             <TextTask>{text}</TextTask>
             <BtnDelete onClick={() => dispatch(deleteTask(id))}>
-              Delete
+              <BsFillTrash3Fill className="icon-delete" />
             </BtnDelete>
           </WrapTask>
         ))}
