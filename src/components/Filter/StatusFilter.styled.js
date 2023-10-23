@@ -4,23 +4,27 @@ export const WrapFilter = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  gap: 20px;
+  gap: 15px;
   padding: 10px;
-  min-width: 320px;
+  min-width: 360px;
   background-color: rgb(179, 229, 255);
-  -webkit-box-shadow: 0px 7px 9px 3px rgba(0, 0, 0, 0.57);
-  box-shadow: 0px 7px 9px 3px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.75);
 
   @media screen and (min-width: 600px) {
-    width: 600px;
+    width: 580px;
   }
 `;
 export const TitleFilter = styled.h2`
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 700;
   color: rgb(0, 77, 153);
   padding: 0;
   margin: 0;
+
+  @media screen and (min-width: 600px) {
+    font-size: 28px;
+  }
 `;
 export const WrapBtn = styled.div`
   display: flex;
@@ -28,7 +32,10 @@ export const WrapBtn = styled.div`
   align-items: center;
   gap: 20px;
   width: 240px;
-  height: 50px;
+  /* height: 50px; */
+  @media screen and (min-width: 600px) {
+    height: 50px;
+  }
 `;
 export const BtnAll = styled.button`
   display: flex;
@@ -43,8 +50,8 @@ export const BtnAll = styled.button`
   margin: 0;
 
   .icon-btn-all {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     fill: white;
     background-color: rgb(0, 77, 153);
     border-radius: 50%;
@@ -55,6 +62,12 @@ export const BtnAll = styled.button`
     fill: rgb(77, 106, 255);
     border: 2px solid rgb(77, 106, 255);
     background-color: white;
+  }
+  @media screen and (min-width: 600px) {
+    .icon-btn-all {
+      width: 36px;
+      height: 36px;
+    }
   }
 `;
 export const BtnActive = styled.button`
@@ -70,8 +83,8 @@ export const BtnActive = styled.button`
   margin: 0;
 
   .icon-btn-active {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     fill: white;
     background-color: rgb(0, 77, 153);
     border-radius: 50%;
@@ -82,6 +95,12 @@ export const BtnActive = styled.button`
     fill: rgb(77, 106, 255);
     border: 2px solid rgb(77, 106, 255);
     background-color: white;
+  }
+  @media screen and (min-width: 600px) {
+    .icon-btn-active {
+      width: 36px;
+      height: 36px;
+    }
   }
 `;
 export const BtnCompleted = styled.button`
@@ -97,8 +116,8 @@ export const BtnCompleted = styled.button`
   margin: 0;
 
   .icon-btn-ended {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     fill: white;
     background-color: rgb(0, 77, 153);
     border-radius: 50%;
@@ -109,5 +128,11 @@ export const BtnCompleted = styled.button`
     fill: rgb(77, 106, 255);
     border: 2px solid rgb(77, 106, 255);
     background-color: white;
+  }
+  @media screen and (min-width: 600px) {
+    .icon-btn-ended {
+      width: 36px;
+      height: 36px;
+    }
   }
 `;

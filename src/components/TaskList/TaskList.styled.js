@@ -5,12 +5,12 @@ export const WrapList = styled.ul`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 320px;
-  gap: 10px;
+  min-width: 360px;
+  gap: 5px;
   padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-
+  margin: 0;
+  /* margin-top: 0;
+  margin-bottom: 0; */
   @media screen and (min-width: 600px) {
     flex-direction: column;
     width: 600px;
@@ -24,10 +24,10 @@ export const WrapTask = styled.li`
   background-color: white;
   padding: 4px 8px;
   gap: 10px;
-  min-width: 320px;
+  min-width: 360px;
   padding: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
 
   @media screen and (min-width: 600px) {
     width: 600px;
@@ -44,17 +44,15 @@ export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   width: 28px;
   height: 28px;
   cursor: pointer;
-  -webkit-box-shadow: 0px 7px 9px 3px rgba(0, 0, 0, 0.57);
-  box-shadow: 0px 7px 9px 3px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.75);
 
   &:autofill {
     border: 3px solid darkorange;
   }
-
   &:-webkit-autofill {
     border: 3px solid darkorange;
   }
-
   .input[type='checkbox']:checked {
     background-color: green;
   }
@@ -71,17 +69,16 @@ export const TextTask = styled.label`
   align-items: center;
   background-color: rgb(77, 106, 255);
   color: white;
-  min-width: 280px;
+  min-width: 270px;
   height: 30px;
   font-size: 16px;
   font-weight: 500;
   border-radius: 10px;
-  border: 2px solid rgb(77, 106, 255);
-
+  border: 3px solid rgb(77, 106, 255);
+  -webkit-box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.75);
   padding: 4px 8px;
   margin: 0;
-  -webkit-box-shadow: 0px 7px 9px 3px rgba(0, 0, 0, 0.57);
-  box-shadow: 0px 7px 9px 3px rgba(0, 0, 0, 0.57);
   &:-webkit-autofill {
     border: 3px solid darkorange;
   }
@@ -121,28 +118,32 @@ export const BtnDelete = styled.button`
   align-items: center;
   background-color: white;
   border: 3px solid rgb(77, 106, 255);
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   padding: 0;
   cursor: pointer;
-  -webkit-box-shadow: 0px 7px 9px 3px rgba(0, 0, 0, 0.57);
-  box-shadow: 0px 7px 9px 3px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.75);
   &:hover,
   :focus {
     background-color: rgb(77, 106, 255);
   }
-  @media screen and (min-width: 600px) {
-    width: 44px;
-    height: 44px;
-  }
 
   .icon-delete {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     fill: rgb(77, 106, 255);
   }
   .icon-delete:hover,
   .icon-delete:focus {
     fill: white;
+  }
+  @media screen and (min-width: 600px) {
+    width: 44px;
+    height: 44px;
+    .icon-delete {
+      width: 28px;
+      height: 28px;
+    }
   }
 `;

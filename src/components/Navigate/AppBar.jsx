@@ -1,7 +1,7 @@
 import React from 'react';
-import { TopNavigation } from './AppBar.styled';
 import { TaskCounter } from '../Counter/TaskCounter';
 import StatusFilter from '../Filter/StatusFilter';
+import { TopNavigation } from '../../components/App.styled';
 export default function AppBar() {
   return (
     <>

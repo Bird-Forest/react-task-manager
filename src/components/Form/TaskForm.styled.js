@@ -4,19 +4,21 @@ export const FormTask = styled.form`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 320px;
+  min-width: 360px;
   gap: 10px;
-  padding: 10px;
+  padding: 0;
+  margin: 0;
+  /* margin-right: auto;
+  margin-left: auto; */
   @media screen and (min-width: 600px) {
-    flex-direction: row;
     width: 600px;
   }
 `;
 export const InputForm = styled.input`
-  display: inline-block;
+  display: inline-flex;
   background-color: rgb(102, 204, 255);
   color: white;
-  min-width: 320px;
+  min-width: 310px;
   height: 30px;
   font-size: 16px;
   font-weight: 500;
@@ -24,10 +26,10 @@ export const InputForm = styled.input`
   border: 2px solid rgb(102, 204, 255);
   outline: 2px solid rgb(102, 204, 255);
   padding: 4px 8px;
-  -webkit-box-shadow: 0px 7px 9px 3px rgba(0, 0, 0, 0.57);
-  box-shadow: 0px 7px 9px 3px rgba(0, 0, 0, 0.57);
-  margin-left: auto;
-  margin-right: auto;
+  -webkit-box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.75);
+  /* margin-right: auto;
+  margin-left: auto; */
 
   @media screen and (min-width: 600px) {
     width: 500px;
@@ -45,13 +47,9 @@ export const BtnForm = styled.button`
   height: 40px;
   padding: 0;
   cursor: pointer;
-  -webkit-box-shadow: 0px 7px 9px 3px rgba(0, 0, 0, 0.57);
-  box-shadow: 0px 7px 9px 3px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 6px 1px rgba(0, 0, 0, 0.75);
 
-  @media screen and (min-width: 600px) {
-    width: 48px;
-    height: 48px;
-  }
   &:hover,
   :focus {
     background-color: rgb(77, 106, 255);
@@ -66,5 +64,9 @@ export const BtnForm = styled.button`
   .icon-add:hover,
   .icon-add:focus {
     fill: white;
+  }
+  @media screen and (min-width: 600px) {
+    width: 48px;
+    height: 48px;
   }
 `;

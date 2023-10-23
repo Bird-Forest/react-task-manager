@@ -27,7 +27,7 @@ export default function StatusFilter() {
   return (
     <>
       <WrapFilter>
-        <TitleFilter>Filter by status</TitleFilter>
+        <TitleFilter>Filter</TitleFilter>
         <WrapBtn>
           <BtnAll
             selected={filter.all}
